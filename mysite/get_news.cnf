@@ -1,0 +1,5 @@
+[client]
+database = GETNEWS
+user = gnAdmin
+password = Admin@1245
+default-character-set = utf8

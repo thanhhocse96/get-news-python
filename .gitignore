@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#pycatch
+./getnewsurl/__pycache__
+./mysite/__pycache__
