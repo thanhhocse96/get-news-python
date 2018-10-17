@@ -9,6 +9,8 @@ class News(models.Model):
     news_domain = models.CharField(max_length=50)
     news_date_download = models.DateTimeField('news date download')
     news_url = models.CharField(max_length=300)
+    news_deletion = models.BooleanField()
+    news_label = models.CharField(max_length=10, default='real')
 
 class News_Stance(models.Model):
     news_fkey = models.ForeignKey(News, on_delete=models.CASCADE)
@@ -23,8 +25,10 @@ class News_Images(models.Model):
     image_fkey = models.ForeignKey(News, on_delete=models.CASCADE)
     image_url = models.CharField(max_length=300)
     image_description = models.CharField(max_length=200)
+    image_stance = models.CharField(max_length=20)
 
 class News_Movies(models.Model):
     movie = models.ForeignKey(News, on_delete=models.CASCADE)
     movie_url = models.CharField(max_length=300)
     movie_description = models.CharField(max_length=200)
+    movie_stance = models.CharField(max_length=20)
