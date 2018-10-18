@@ -1,0 +1,9 @@
+{% if latest_news_list %}
+    <ul>
+    {% for news in latest_news_list %}
+        <li><a href="/getnewsurl/{{ news.id }}/">{{ news.news_title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Hiện chưa có bài báo nào trong danh sách.</p>
+{% endif %}
