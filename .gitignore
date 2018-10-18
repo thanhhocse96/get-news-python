@@ -106,3 +106,4 @@ venv.bak/
 #pycatch
 ./getnewsurl/__pycache__
 ./mysite/__pycache__
+./getnewsurl/migrations/__pycache__

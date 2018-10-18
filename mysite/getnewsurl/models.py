@@ -10,12 +10,6 @@ class News(models.Model):
     news_date_download = models.DateTimeField('news date download')
     news_url = models.CharField(max_length=300)
     news_deletion = models.BooleanField()
-    news_label = models.CharField(max_length=10, default='real')
-
-class News_Stance(models.Model):
-    news_fkey = models.ForeignKey(News, on_delete=models.CASCADE)
-    news_stance = models.CharField(max_length=10)
-    news_true_language = models.CharField(max_length=2)
 
 class News_Authors(models.Model):
     author_fkey = models.ForeignKey(News, on_delete=models.CASCADE)
@@ -32,3 +26,12 @@ class News_Movies(models.Model):
     movie_url = models.CharField(max_length=300)
     movie_description = models.CharField(max_length=200)
     movie_stance = models.CharField(max_length=20)
+
+class News_Label(models.Model):
+    news_fkey = models.OneToOneField(News, on_delete=models.CASCADE, primary_key = True)
+    news_label = models.CharField(max_length=10, default='real')
+
+class News_Stance(models.Model):
+    news_fkey = models.OneToOneField(News, on_delete=models.CASCADE, primary_key = True)
+    news_stance = models.CharField(max_length=10)
+    news_true_language = models.CharField(max_length=2)
