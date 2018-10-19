@@ -29,9 +29,14 @@ class News_Movies(models.Model):
 
 class News_Label(models.Model):
     news_fkey = models.OneToOneField(News, on_delete=models.CASCADE, primary_key = True)
-    news_label = models.CharField(max_length=10, default='real')
+    news_label = models.CharField(choices = (
+        ('f', "Fake"),
+        ('r', "Real"),
+    ),max_length=1)
 
 class News_Stance(models.Model):
     news_fkey = models.OneToOneField(News, on_delete=models.CASCADE, primary_key = True)
-    news_stance = models.CharField(max_length=10)
+    news_stance = models.CharField(choices= (
+        ('Ag')
+    ),max_length=2)
     news_true_language = models.CharField(max_length=2)
