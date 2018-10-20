@@ -78,7 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'init_command': 'ALTER DATABASE GETNEWS CHARACTER SET utf8 COLLATE utf8_general_ci',
+            'init_command': 'ALTER DATABASE GETNEWS CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci',
             'read_default_file':  os.path.join(BASE_DIR, 'get_news.cnf'),
         },
     }
