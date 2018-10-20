@@ -37,6 +37,9 @@ class News_Label(models.Model):
 class News_Stance(models.Model):
     news_fkey = models.OneToOneField(News, on_delete=models.CASCADE, primary_key = True)
     news_stance = models.CharField(choices= (
-        ('Ag')
+        ("Ag", "Agrees"),
+        ("Da", "Disagrees"),
+        ("D~", "Discusses"),
+        ("Ur", "Unrelated")
     ),max_length=2)
     news_true_language = models.CharField(max_length=2)
