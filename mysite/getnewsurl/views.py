@@ -29,3 +29,4 @@ def viewNews(request, news_id):
 def viewNewsStance(request, news_id):
     response = "Bạn đang xem lập trường của tin tức số %s trong dữ liệu."
     return HttpResponse(response % news_id)
+
